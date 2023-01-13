@@ -12,6 +12,7 @@ const getGist = async (username) => {
     const gist = await axios.get(`https://api.github.com/users/${username}/gists`, { headers: { Authorization: `Bearer ${config.githubtoken}` } },);
     return gist.data;
   } catch (err) {
+    console.log(err);
     return null;
   }
 };
